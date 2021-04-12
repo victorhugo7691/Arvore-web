@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="PT-BR" ng-app="meuApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paciente</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css"/> 
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/> 
+
+</head>
+<body background="imagens/background.png" class="menuDetails">
+    {{app}}
+    <nav class="navbar navbar-dark bg-primary" id="navbar">
+        Sistema de controle de medicação
+      </nav>
+      <section class="tela">
+          <br>
+        <div>Bem vindo(a)!</div>
+        <br>
+        <div ng-controller="appController">
+            <p>Você está sentindo dor?</p>
+            <button type="button" class="btn btn-light" ng-click="btnSim = !btnSim">Sim</button>
+            <button type="button" class="btn btn-light" ng-click="dispensado()">Não</button>
+
+            <div class="senteDor" ng-if="btnSim">
+                <p>Está com febre?</p>
+                <button type="button" class="btn btn-light" ng-click="btnSim2 = !btnSim2">Sim</button>
+                <button type="button" class="btn btn-light" ng-click="dispensado()">Não</button>
+                <br>
+                <div ng-if="btnSim2">
+                    <br>
+                    <button type="button" class="btn btn-light"ng-click="dispensado()">A baixo de 38°C</button>
+                    <button type="button" class="btn btn-danger" ng-click="febreAcima = !febreAcima">Acima de 38°C</button>
+                    <br>
+                    <div ng-if="febreAcima">
+                        <h1 id="alerta">Alerta!</h1>
+                        <h2>Você precisa tomar o medicamento!
+                    </h2>
+                    <br>
+                    <button type="button" class="btn btn-light" ng-click="imagem=!imagem">Visualizar Árvore</button>
+                    <div id="imagem" ng-if="imagem"> <br><img src="imagens/arvore.png"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+</body>
+</html>

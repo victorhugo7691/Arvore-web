@@ -1,0 +1,22 @@
+.menuDetails{
+    width: 50;
+    color:aliceblue;
+    text-align: center;
+}
+#navbar{
+    text-align: center;;
+}
+.tela{
+    text-align: center;
+}
+.senteDor{
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color:gray;
+    color: black;
+}
+
+#alerta{
+    color:orangered;
+}
